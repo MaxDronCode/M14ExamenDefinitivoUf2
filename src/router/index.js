@@ -14,6 +14,18 @@ const router = createRouter({
       name: 'anys',
       component: () => import('../views/AnysView.vue'),
     },
+    {
+      path: '/detall_any/:any',
+      name: 'detall_any',
+      component: () => import('../views/DetallAnyView.vue'),
+      props: route => ({ any: route.params.any }),
+    },
+    {
+      path: '/detall_centre/:centre/:any',
+      name: 'detall_centre',
+      component: () => import('../views/DetallCentreView.vue'),
+      props: route => ({ any: route.params.any, centre: route.params.centre }),
+    },
   ],
 })
 
